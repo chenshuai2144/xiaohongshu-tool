@@ -1,0 +1,84 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>小红书管理工具</title>
+  </head>
+  <body>
+    <div
+      style="
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        font-variant-ligatures: no-discretionary-ligatures;
+      "
+    >
+      <button
+        id="saveMaskList"
+        style="
+          background: #1890ff;
+          color: #fff;
+          border: 0;
+          padding: 4px;
+          cursor: pointer;
+        "
+      >
+        加载封面图到页面中（虚拟滚动，一次14张）
+        <span>配合下载图片插件使用</span>
+      </button>
+
+      <button
+        id="openMaskList"
+        style="
+          background: #1890ff;
+          color: #fff;
+          border: 0;
+          padding: 4px;
+          cursor: pointer;
+        "
+      >
+        打开封面图（虚拟滚动，一次14张）
+      </button>
+
+      <button
+        id="showMoreComment"
+        style="
+          background: #ddd;
+          color: #000;
+          border: 0;
+          padding: 4px;
+          cursor: pointer;
+        "
+      >
+        展开更多评论
+      </button>
+      <button
+        id="sendmessageid"
+        style="
+          background: #ddd;
+          color: #000;
+          border: 0;
+          padding: 4px;
+          cursor: pointer;
+        "
+      >
+        下载所有评论(csv)
+      </button>
+
+      <button
+        id="saveForHtml"
+        style="
+          background: #1890ff;
+          color: #fff;
+          border: 0;
+          padding: 4px;
+          cursor: pointer;
+        "
+      >
+        下载所有评论(html)
+      </button>
+
+      <script src="popup.js"></script>
+    </div>
+  </body>
+</html>
