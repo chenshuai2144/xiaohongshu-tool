@@ -197,7 +197,7 @@ const getCommentListToHTML = () => {
   var htmlData = renderToItem(list);
   var imgList = [];
   document
-    .querySelectorAll('.xgplayer-poster')
+    .querySelectorAll('.swiper-slide')
     .forEach((item) =>
       imgList.push(
         item.style['backgroundImage'].replace('url("', '').replace('")', '')
@@ -314,7 +314,6 @@ const addImgList = () => {
       .replace('")', '');
 
     document.body.appendChild(img);
-    window.open(img.src); //这里是打开新窗口
   });
 };
 
@@ -329,10 +328,28 @@ document.getElementById('saveMaskList').onclick = function () {
 };
 
 const openImgList = () => {
+  const downloadFile = (blob, filename) => {
+    let url = window.URL.createObjectURL(blob);
+    // 创建隐藏的可下载链接
+    let link = document.createElement('a');
+    link.style.display = 'none';
+    link.href = url;
+    link.setAttribute('download', filename);
+    document.body.appendChild(link);
+    link.click();
+  };
+  const fetchUrl = (doc_url) =>
+    fetch(doc_url)
+      // record.doc_url为文件url地址
+      .then((res) => res.blob())
+      .then((blob) => {
+        downloadFile(blob, doc_url.split('/').pop());
+      });
+
   document.querySelectorAll('.mask').forEach(async (item) => {
-    window.open(
+    fetchUrl(
       item.style['backgroundImage'].replace('url("', '').replace('")', '')
-    ); //这里是打开新窗口
+    );
   });
 };
 

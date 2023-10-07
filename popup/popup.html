@@ -1,81 +1,50 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css"
+      integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
+      crossorigin="anonymous"
+    />
     <title>小红书管理工具</title>
   </head>
-  <body>
-    <div
-      style="
-        width: 200px;
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        font-variant-ligatures: no-discretionary-ligatures;
-      "
-    >
+  <body style="padding: 12px" class="container">
+    <div style="width: 320px; display: flex; flex-direction: column; gap: 8px">
+      <div class="alert alert-success" role="alert">
+        评论一般默认只加载五条，想要下载所有评论，请疯狂点击展开更多评论，直到全部加载完成。
+      </div>
       <button
-        id="saveMaskList"
-        style="
-          background: #1890ff;
-          color: #fff;
-          border: 0;
-          padding: 4px;
-          cursor: pointer;
-        "
-      >
-        加载封面图到页面中（虚拟滚动，一次14张）
-        <span>配合下载图片插件使用</span>
-      </button>
-
-      <button
-        id="openMaskList"
-        style="
-          background: #1890ff;
-          color: #fff;
-          border: 0;
-          padding: 4px;
-          cursor: pointer;
-        "
-      >
-        打开封面图（虚拟滚动，一次14张）
-      </button>
-
-      <button
+        type="button"
         id="showMoreComment"
-        style="
-          background: #ddd;
-          color: #000;
-          border: 0;
-          padding: 4px;
-          cursor: pointer;
-        "
+        class="btn btn-outline-secondary"
       >
         展开更多评论
       </button>
       <button
+        type="button"
         id="sendmessageid"
-        style="
-          background: #ddd;
-          color: #000;
-          border: 0;
-          padding: 4px;
-          cursor: pointer;
-        "
+        class="btn btn-primary btn-block"
       >
         下载所有评论(csv)
       </button>
 
-      <button
-        id="saveForHtml"
-        style="
-          background: #1890ff;
-          color: #fff;
-          border: 0;
-          padding: 4px;
-          cursor: pointer;
-        "
-      >
+      <button type="button" id="saveForHtml" class="btn btn-primary btn-block">
         下载所有评论(html)
+      </button>
+
+      <button type="button" id="saveMaskList" class="btn btn-outline-secondary">
+        加载封面图到页面中（虚拟滚动，一次14张）
+        <div>配合下载图片插件使用</div>
+      </button>
+
+      <button type="button" id="openMaskList" class="btn btn-outline-secondary">
+        下载封面图（虚拟滚动，一次14张）
       </button>
 
       <script src="popup.js"></script>
